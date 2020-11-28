@@ -12,40 +12,11 @@ export class HttpDietService {
   diets: Diet[] = [
     {
       id: 1,
-      title: 'Camiseta',
+      name: 'Dieta Vegana',
       description: 'bla bla bla bla bla',
       duration: 'asd'
     },
-    {
-      id: 2,
-      title: 'Hoodie',
-      description: 'bla bla bla bla bla',
-      duration: 'asd'
-    },
-    {
-      id: 3,
-      title: 'Mug',
-      description: 'bla bla bla bla bla',
-      duration: 'asd'
-    },
-    {
-      id: 4,
-      title: 'Pin',
-      description: 'bla bla bla bla bla',
-      duration: 'asd'
-    },
-    {
-      id: 5,
-      title: 'Stickers',
-      description: 'bla bla bla bla bla',
-      duration: 'asd'
-    },
-    {
-      id: 6,
-      title: 'Stickers',
-      description: 'bla bla bla bla bla',
-      duration: 'asd'
-    },
+
   ];
 
   constructor() { }
