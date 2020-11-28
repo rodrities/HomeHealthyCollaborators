@@ -1,0 +1,73 @@
+<div class="container">
+  <h2>Add Sessions:</h2>
+  <mat-grid-list cols="1" rowHeight="100px">
+    <mat-grid-tile>
+      <form (submit)="onSubmit2(1, 1)" #sessionForm="ngForm">
+        <mat-form-field>
+          <input matInput placeholder="Link" name="link" required
+                 [(ngModel)]="sessionData.link">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="StartAt" name="startAt" required
+                 [(ngModel)]="sessionData.startAt">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="EndAt" name="endAt" required
+                 [(ngModel)]="sessionData.endAt">
+        </mat-form-field>
+        <ng-container>
+          <button mat-button color="primary">Add</button>
+        </ng-container>
+        <ng-template>
+          <button mat-button color="primary">Add</button>
+        </ng-template>
+      </form>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <h2>Your Sessions:</h2>
+  <mat-card>
+    <mat-card-content *ngFor="let data of dataSource.data">
+      <mat-card >
+        <mat-card-title>
+          {{ data.link }}
+        </mat-card-title>
+        <mat-card-content>
+          <p>Inicio: {{ data.startAt | date:'medium' }}</p>
+          <p>Final:  {{ data.endAt | date:'medium' }}</p>
+        </mat-card-content>
+        <div>
+          <button *ngIf="!sessionIsActive(data.startAt , data.endAt)" mat-raised-button disabled>Session Ended</button>
+          <button  class="button-session" *ngIf="sessionIsActive(data.startAt, data.endAt)" mat-raised-button >Enter Session</button>
+          <button mat-raised-button class="button-resource" >Add Diet</button>
+          <button mat-raised-button class="button-resource">Add Routine</button>
+        </div>
+      </mat-card>
+      <mat-grid-list cols="1" rowHeight="100px">
+        <mat-grid-tile>
+          <form (submit)="onSubmit(data.id)" #dietForm="ngForm">
+            <mat-form-field>
+              <input matInput placeholder="Name" name="name" required
+                     [(ngModel)]="dietData.name">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Description" name="description" required
+                     [(ngModel)]="dietData.description">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Duration" name="duration" required
+                     [(ngModel)]="dietData.duration">
+            </mat-form-field>
+            <ng-container>
+              <button mat-button color="primary">Add</button>
+            </ng-container>
+            <ng-template>
+              <button mat-button color="primary">Add</button>
+            </ng-template>
+          </form>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+

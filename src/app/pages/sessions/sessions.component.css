@@ -1,0 +1,16 @@
+.button-session{
+  background-color: green;
+  color: white;
+}
+.button-resource{
+  background-color: rgb(15, 100, 240) ;
+  color: white;
+  margin-left: 30px;
+}
+h2 {
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: green;
+}
+
